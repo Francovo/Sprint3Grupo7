@@ -1,0 +1,74 @@
+.Container-Home{
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 3rem;
+    justify-content: space-between;
+    margin: 0rem 7rem;
+}
+
+.Label-Home{
+    font-size: xx-large;
+    font-weight: bold;
+    margin-left: 7rem;
+    margin-bottom: 1.3rem;
+    color: white;
+}
+
+
+.Container-Todo{
+    width: fit-content;
+}
+
+.Container{
+    width: fit-content;
+    width: 18rem;
+    height: 26rem;
+    position: relative;
+}
+
+.Imagen{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.Calificacion{
+    font-size: x-large;
+    border: solid yellow;
+    border-radius: 0 50px 50px 0;
+    background-color: rgba(0, 0, 0, 0.623);
+    top: 2rem;
+    padding: 0.2rem 1.5rem;
+    left: 0;
+    color: white;
+    position: absolute;
+    .estrella{
+        color: yellow;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+////////////////CARRUSEL////////////////////////////
+.Carrusel{
+    margin-bottom: 4rem;
+    .eaptOe{
+        background-color: rgb(50, 25, 73);
+    }
+}
+
+
+.Container-Carrusel iframe{
+    height: 410px;
+    width: 84vw;
+}
+
