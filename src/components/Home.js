@@ -4,18 +4,36 @@ import "./Cards.scss";
 import Carrusel from "./Carrusel";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useDispatch, useSelector } from "react-redux";
-import { addPage} from "../reducers/moviesReducer";
+import { addPage } from "../reducers/moviesReducer";
 
-const Home = () => {
+const Home = ({ search }) => {
+  const [filtro, setFiltro] = useState([]);
+
   const dispatch = useDispatch();
+
+  const Buscador = async (search) => {
+    const pUrl = "https://api.themoviedb.org/3/search/movie?query=";
+    const input = search;
+    const apiKey = "&api_key=a049d6086798142f1ce78897272be805";
+    const LinkB2 = "&language=es";
+    let moviesBUrl = pUrl + input + apiKey + LinkB2;
+
+    const resp = await fetch(moviesBUrl);
+    const data = await resp.json();
+    setFiltro(data.results);
+  };
 
   const movies = useSelector((state) => state.movies.movies);
 
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    dispatch(addPage(page));
-  }, [dispatch, page]);
+    if (search.length > 0) {
+      Buscador(search);
+    } else {
+      dispatch(addPage(page));
+    }
+  }, [dispatch, page, search]);
 
   return (
     <div>
@@ -30,9 +48,9 @@ const Home = () => {
         loader={<h4>Loading...</h4>}
       >
         <div className="Container-Home">
-          {movies.map((movie) => (
-            <Card key={movie.id} movie={movie} />
-          ))}
+          {search.length > 0
+            ? filtro.map((movie) => <Card key={movie.id} movie={movie} />)
+            : movies.map((movie) => <Card key={movie.id} movie={movie} />)}
         </div>
       </InfiniteScroll>
     </div>

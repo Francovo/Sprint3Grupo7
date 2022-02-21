@@ -6,7 +6,7 @@
     gap: 1rem;
   }
   .Container-a-Logo {
-    margin-left: 6%;
+    margin-left: 4%;
     .Logo {
       margin-top: 0.7rem;
       width: 9rem;
@@ -46,27 +46,40 @@
   }
 }
 
-.Ubicacion {
-  margin-top: 1.7rem;
-  display: flex;
-  justify-content: space-around;
-  width: 7rem;
+.btnUbicacion{
+  background: none;
   border: none;
-  background-color: transparent;
-  color: white;
-  text-decoration: none;
+  .Ubicacion {
+    margin-top: 1.7rem;
+    display: flex;
+    justify-content: space-around;
+    width: 7rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .iconUbi {
   margin: 0.5rem 0.5rem 0 0;
 }
 
-
-.aFav{
+.aFav {
   height: fit-content;
   text-decoration: none;
   margin-top: 2rem;
-  .estrella{
+  .estrella {
     color: yellow;
   }
+}
+
+
+.btnlogout{
+  margin: 2rem 0 0 1rem;
+  border-radius: 20px;
+  height: 2rem;
+  width: fit-content;
+  background: orange;
+  border: none;
 }

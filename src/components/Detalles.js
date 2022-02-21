@@ -43,13 +43,6 @@ const Detalles = (movie) => {
               >
                 Volver
               </button>
-              <button
-                type="button"
-                className="btn btn-dark float-end"
-                data-bs-dismiss="modal"
-              >
-                ★
-              </button>
             </div>
           </div>
         </div>

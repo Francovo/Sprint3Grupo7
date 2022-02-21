@@ -30,9 +30,6 @@ function Login() {
     dispatch(loginGoogleAsincrono());
   };
 
-  const handleLogout = () => {
-      dispatch(logoutAsincrono())
-  }
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -48,9 +45,7 @@ function Login() {
       <Button variant="primary" type="submit">
         Enviar
       </Button>
-      <Button variant="primary" type="button" onClick={() => handleLogout()}>
-        Salir
-      </Button>
+
 
       <Container className="auth__social-networks">
         <Container
