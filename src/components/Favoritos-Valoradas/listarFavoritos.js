@@ -23,6 +23,7 @@ export const ListaPeliculasAgregadas = () => {
 
   useEffect(() => {
     dispatch(listarFavoritosAsincrono());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const { array } = useSelector((store) => store.listarFav);
