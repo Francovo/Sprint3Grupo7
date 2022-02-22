@@ -6,7 +6,6 @@ export const getData = async (page) => {
   const apiKey = "&api_key=a049d6086798142f1ce78897272be805";
   const language = "&language=es";
   let moviesUrl = pUrl + changes + apiKey + language;
-  // const [movies, setMovies] = useState([]);
 
   const resp = await fetch(moviesUrl);
   const data = await resp.json();
@@ -27,9 +26,6 @@ const movieSlice = createSlice({
   name: "movies",
   initialState,
   reducers: {
-    // setMovies(state, action) {
-    //   state.movies = action.payload;
-    // },
     addMovies(state, action) {
       state.movies = state.movies.concat(action.payload);
     },

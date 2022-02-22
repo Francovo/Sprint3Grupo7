@@ -15,6 +15,7 @@ function AppRouters() {
 
   const [logged, setLogged] = useState(false);
   const [checking, setChecking] = useState(true);
+  // eslint-disable-next-line no-unused-vars
   const [user, setUser] = useState("");
 
   useEffect(() => {
@@ -36,11 +37,6 @@ function AppRouters() {
     return <h1>Espere...</h1>;
   }
 
-  // if (logged===true) {
-  //   <NavBarPublic style={`display: none`}/>;
-  // } else {
-  //   <NavBarPublic />;
-  // }
 
   return (
     <div>

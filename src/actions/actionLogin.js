@@ -4,11 +4,10 @@ import { types } from "../types/types";
 
 
 export const logoutAsincrono = () => {
-    return(dispatch) => {
+    return() => {
         const auth = getAuth();
         signOut(auth)
-        .then((user) => {
-            // dispatch(loginSincrono(user.uid, user.displayName))
+        .then(() => {
             console.log("Chao");
         })
         .catch(error => {
@@ -19,11 +18,10 @@ export const logoutAsincrono = () => {
 
 
 export const loginEmailPassAsincrono = (email, pass) => {
-    return(dispatch) => {
+    return() => {
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, pass)
         .then(({user}) => {
-            // dispatch(loginSincrono(user.uid, user.displayName))
             console.log(user);
         })
         .catch(error => {

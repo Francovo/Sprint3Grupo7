@@ -13,7 +13,7 @@ const Card = ({ movie }) => {
         data-bs-toggle="modal"
         data-bs-target={`#id${movie.id}`}
       >
-        <img src={imageUrl} className="Imagen" />
+        <img src={imageUrl} className="Imagen" alt=""/>
         <label className="Calificacion">
           <span className="estrella">★</span> {movie.vote_average}
         </label>

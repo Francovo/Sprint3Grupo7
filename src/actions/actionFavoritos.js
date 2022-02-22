@@ -61,7 +61,7 @@ export const eliminarFavoritoAsincrono = (IdPelicula) => {
 };
 
 export const editarFavoritoAsincrono = (id, data) => {
-  return async (dispatch) => {
+  return async () => {
     const pelCollection = collection(db, "Sprint3grupo07");
     const q = query(pelCollection, where("id", "==", id));
 

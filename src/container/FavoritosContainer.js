@@ -1,7 +1,6 @@
 import React from "react";
 import Favoritos from "../components/Favoritos-Valoradas/Favoritos";
 import ListaPeliculasAgregadas from "../components/Favoritos-Valoradas/listarFavoritos";
-// import ListarRecomendaciones from "../components/ListarRecomendaciones";
 
 const Recomendaciones = () => {
   return (

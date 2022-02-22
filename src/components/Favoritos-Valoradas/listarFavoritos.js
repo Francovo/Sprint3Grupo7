@@ -28,16 +28,6 @@ export const ListaPeliculasAgregadas = () => {
 
   const { array } = useSelector((store) => store.listarFav);
 
-  // const handleClickModificar = (pelicula) => {
-  //   setValues(pelicula);
-  // };
-
-  // const handleInputChange = ({ target }) => {
-  //   setValues({
-  //     ...values,
-  //     [target.name]: target.value,
-  //   });
-  // };
 
   return (
     <div>

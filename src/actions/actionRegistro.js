@@ -3,7 +3,7 @@ import { types } from "../types/types";
 
 
 export const RegistroAsincrono = (email, pass, name) => {
-    return(dispatch) => {
+    return() => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, pass)
         .then(({user}) => {

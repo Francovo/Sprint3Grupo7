@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { loginEmailPassAsincrono, loginGoogleAsincrono, logoutAsincrono } from "../../actions/actionLogin";
+import { loginEmailPassAsincrono, loginGoogleAsincrono } from "../../actions/actionLogin";
 import { useDispatch } from "react-redux";
 
 function Login() {
