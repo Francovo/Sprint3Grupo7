@@ -50,7 +50,7 @@ const NavBarPublic = ({ setSearch }) => {
             className="Logo"
           />
         </a>
-        <Link to="/" className="btnNavBar">
+        <Link to="/home" className="btnNavBar">
           Todas
         </Link>
         <Link to="/valoradas" className="btnNavBar">

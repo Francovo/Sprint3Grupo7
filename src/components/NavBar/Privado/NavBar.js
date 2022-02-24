@@ -53,10 +53,10 @@ const NavBarPrivate = ({ setSearch }) => {
         <Link to="/" className="btnNavBar">
           Todas
         </Link>
-        <Link to="/valoradas" className="btnNavBar">
+        <Link to="/valoradas1" className="btnNavBar">
           Mas Valoradas
         </Link>
-        <Link to="/valoradas" className="btnNavBar">
+        <Link to="/valoradas1" className="btnNavBar">
           Menos Valoradas
         </Link>
 

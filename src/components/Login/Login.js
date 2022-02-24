@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { loginEmailPassAsincrono, loginGoogleAsincrono } from "../../actions/actionLogin";
+import {
+  loginEmailPassAsincrono,
+  loginGoogleAsincrono,
+} from "../../actions/actionLogin";
 import { useDispatch } from "react-redux";
 
 function Login() {
@@ -12,7 +15,7 @@ function Login() {
     pass: "",
   });
 
-  const {email,password} = registro;
+  const { email, password } = registro;
 
   const handleInputChange = ({ target }) => {
     setRegistro({
@@ -22,30 +25,40 @@ function Login() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    dispatch(loginEmailPassAsincrono(email, password))
-  }
+    e.preventDefault();
+    dispatch(loginEmailPassAsincrono(email, password));
+  };
 
   const handleGoogleAsincrono = () => {
     dispatch(loginGoogleAsincrono());
   };
 
-
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Correo</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" name="email" onChange={handleInputChange}/>
+        <Form.Control
+          type="email"
+          placeholder="Enter email"
+          name="email"
+          value={email}
+          onChange={handleInputChange}
+        />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Contraseña</Form.Label>
-        <Form.Control type="password" placeholder="Password" name="password" onChange={handleInputChange}/>
+        <Form.Control
+          type="password"
+          placeholder="Password"
+          name="password"
+          value={password}
+          onChange={handleInputChange}
+        />
       </Form.Group>
       <Button variant="primary" type="submit">
         Enviar
       </Button>
-
 
       <Container className="auth__social-networks">
         <Container

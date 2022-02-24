@@ -11,7 +11,7 @@ const RouterPrivate = ({search, setSearch}) => {
     <NavBarPrivate setSearch={setSearch} />
       <Routes>
         <Route path="/" element={<Home search={search} />} />
-        <Route path="/valoradas" element={<MasValoradas />} />
+        <Route path="/valoradas1" element={<MasValoradas />} />
         <Route path="/favoritos" element={<Recomendaciones />} />
       </Routes>
     </>
