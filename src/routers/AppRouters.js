@@ -33,9 +33,9 @@ function AppRouters() {
       setChecking(false);
     });
   }, [setLogged, setChecking]);
-  if (checking) {
-    return <h1>Espere...</h1>;
-  }
+  // if (checking) {
+  //   return <h1>Espere...</h1>;
+  // }
 
 
   return (

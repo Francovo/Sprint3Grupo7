@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`router publico y privado isLogged 1`] = `
+<div>
+  <BrowserRouter>
+    <Routes>
+      <Route
+        element={
+          <PublicRoute
+            isAuthenticated={false}
+          >
+            <NavBarPublic
+              setSearch={[Function]}
+            />
+            <Registro />
+          </PublicRoute>
+        }
+        path="/registro"
+      />
+      <Route
+        element={
+          <PublicRoute
+            isAuthenticated={false}
+          >
+            <NavBarPublic
+              setSearch={[Function]}
+            />
+            <Login />
+          </PublicRoute>
+        }
+        path="/login"
+      />
+      <Route
+        element={
+          <PublicRoute
+            isAuthenticated={false}
+          >
+            <NavBarPublic
+              setSearch={[Function]}
+            />
+            <Home
+              search={Array []}
+            />
+          </PublicRoute>
+        }
+        path="/home"
+      />
+      <Route
+        element={
+          <PublicRoute
+            isAuthenticated={false}
+          >
+            <NavBarPublic
+              setSearch={[Function]}
+            />
+            <MasValoradas />
+          </PublicRoute>
+        }
+        path="/valoradas"
+      />
+      <Route
+        element={
+          <PrivateRoute
+            isAuthenticated={false}
+          >
+            <RouterPrivate
+              search={Array []}
+              setSearch={[Function]}
+            />
+          </PrivateRoute>
+        }
+        path="/*"
+      />
+    </Routes>
+  </BrowserRouter>
+</div>
+`;

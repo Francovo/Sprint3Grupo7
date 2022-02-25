@@ -17,6 +17,7 @@ export const logoutAsincrono = () => {
 }
 
 
+
 export const loginEmailPassAsincrono = (email, pass) => {
     return() => {
         const auth = getAuth();
@@ -54,3 +55,7 @@ export const loginSincrono = (id, displayname) => {
         }
     }
 }
+
+export const logoutSincrono = () => ({
+        type: types.logout
+})
