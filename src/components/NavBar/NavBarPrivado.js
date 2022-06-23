@@ -3,10 +3,10 @@ import "./NavBar.scss";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMapMarked } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { logoutAsincrono } from "../../../actions/actionLogin";
+import { logoutAsincrono } from "../../actions/actionLogin";
 import { useDispatch } from "react-redux";
 
-const NavBarPublic = ({ setSearch }) => {
+const NavBarPrivate = ({ setSearch }) => {
   let url = "";
 
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const NavBarPublic = ({ setSearch }) => {
 
   const handleLogout = () => {
     dispatch(logoutAsincrono());
-    navigate("/login");
+    navigate("/home");
   };
 
   const getCoordenadas = () => {
@@ -43,20 +43,20 @@ const NavBarPublic = ({ setSearch }) => {
   return (
     <nav className="ContainerNavBar">
       <div className="Container1">
-        <a href="/home" className="Container-a-Logo">
+        <a href="/" className="Container-a-Logo">
           <img
             src="https://res.cloudinary.com/aca-geek/image/upload/v1644293670/logo-blockBuster_ckz15z.png"
             alt=""
             className="Logo"
           />
         </a>
-        <Link to="/home" className="btnNavBar">
+        <Link to="/" className="btnNavBar">
           Todas
         </Link>
-        <Link to="/valoradas" className="btnNavBar">
+        <Link to="/mas" className="btnNavBar">
           Mas Valoradas
         </Link>
-        <Link to="/valoradas" className="btnNavBar">
+        <Link to="/menos" className="btnNavBar">
           Menos Valoradas
         </Link>
 
@@ -65,9 +65,9 @@ const NavBarPublic = ({ setSearch }) => {
             placeholder="Ingresa tu pelicula"
             className="Input"
             onChange={handleInputChange}
-          ></input>
+          />
           <button className="btn-icono">
-            <AiOutlineSearch className="IconoBusqueda" size={20} />
+            <AiOutlineSearch size={20} />
           </button>
         </div>
 
@@ -83,12 +83,20 @@ const NavBarPublic = ({ setSearch }) => {
             </span>
           </button>
         </div>
-        <button className="btnlogout" type="button" onClick={() => handleLogout()}>
-          Login
+
+        <a href="/favoritos" className="aFav">
+          <h4 className="estrella">★ Fav</h4>
+        </a>
+        <button
+          className="btnlogout"
+          type="button"
+          onClick={() => handleLogout()}
+        >
+          Cerrar Sesion
         </button>
       </div>
     </nav>
   );
 };
 
-export default NavBarPublic;
+export default NavBarPrivate;

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addPage } from "../../reducers/moviesReducer";
 import Card from "../Cards";
 
-const MasValoradas = ({ search }) => {
+const MenosValoradas = ({ search }) => {
   const [filtro, setFiltro] = useState([]);
 
   const dispatch = useDispatch();
@@ -40,11 +40,11 @@ const MasValoradas = ({ search }) => {
       next={() => setPage((prevPage) => prevPage + 1)}
       loader={<h4>Loading...</h4>}
     >
-     <div className="Container-Home">
+      <div className="Container-Home">
         {search.length > 0
           ? filtro.map((movie) => <Card key={movie.id} movie={movie} />)
           : movies
-              .filter((valor) => valor.vote_average >= 7.0)
+              .filter((valor) => valor.vote_average < 7.0)
               .sort()
               .map((movie) => <Card key={movie.id} movie={movie} />)}
       </div>
@@ -52,4 +52,4 @@ const MasValoradas = ({ search }) => {
   );
 };
 
-export default MasValoradas;
+export default MenosValoradas;

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./NavBar.scss";
 import { AiOutlineSearch } from "react-icons/ai";
+import './NavBar.scss'
 import { FaMapMarked } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { logoutAsincrono } from "../../../actions/actionLogin";
+import { logoutAsincrono } from "../../actions/actionLogin";
 import { useDispatch } from "react-redux";
 
-const NavBarPrivate = ({ setSearch }) => {
+const NavBarPublic = ({ setSearch }) => {
   let url = "";
 
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const NavBarPrivate = ({ setSearch }) => {
 
   const handleLogout = () => {
     dispatch(logoutAsincrono());
-    navigate("/home");
+    navigate("/login");
   };
 
   const getCoordenadas = () => {
@@ -43,20 +43,20 @@ const NavBarPrivate = ({ setSearch }) => {
   return (
     <nav className="ContainerNavBar">
       <div className="Container1">
-        <a href="/" className="Container-a-Logo">
+        <a href="/home" className="Container-a-Logo">
           <img
             src="https://res.cloudinary.com/aca-geek/image/upload/v1644293670/logo-blockBuster_ckz15z.png"
             alt=""
             className="Logo"
           />
         </a>
-        <Link to="/" className="btnNavBar">
+        <Link to="/home" className="btnNavBar">
           Todas
         </Link>
-        <Link to="/valoradas1" className="btnNavBar">
+        <Link to="/masvaloradas" className="btnNavBar">
           Mas Valoradas
         </Link>
-        <Link to="/valoradas1" className="btnNavBar">
+        <Link to="/menosvaloradas" className="btnNavBar">
           Menos Valoradas
         </Link>
 
@@ -83,16 +83,12 @@ const NavBarPrivate = ({ setSearch }) => {
             </span>
           </button>
         </div>
-
-        <a href="/favoritos" className="aFav">
-          <h4 className="estrella">★ Fav</h4>
-        </a>
         <button className="btnlogout" type="button" onClick={() => handleLogout()}>
-          Cerrar Sesion
+          Login
         </button>
       </div>
     </nav>
   );
 };
 
-export default NavBarPrivate;
+export default NavBarPublic;

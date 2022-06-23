@@ -8,7 +8,8 @@ import { Registro } from "../components/Login/Registro";
 import Login from "../components/Login/Login";
 import Home from "../components/Home";
 import MasValoradas from "../components/Favoritos-Valoradas/MasValoradas";
-import NavBarPublic from "../components/NavBar/Publico/NavBar";
+import NavBarPublic from "../components/NavBar/NavBarPublic";
+import MenosValoradas from "../components/Favoritos-Valoradas/MenosValoradas";
 
 function AppRouters() {
   const [search, setSearch] = useState([]);
@@ -33,9 +34,9 @@ function AppRouters() {
       setChecking(false);
     });
   }, [setLogged, setChecking]);
-  // if (checking) {
-  //   return <h1>Espere...</h1>;
-  // }
+  if (checking) {
+    return <h1>Espere...</h1>;
+  }
 
 
   return (
@@ -74,16 +75,25 @@ function AppRouters() {
             }
           />
           <Route
-            path="/valoradas"
+            path="/masvaloradas"
             element={
               <PublicRoute isAuthenticated={logged}>
                 <NavBarPublic setSearch={setSearch} />
 
-                <MasValoradas />
+                <MasValoradas search={search}/>
               </PublicRoute>
             }
           />
+          <Route
+            path="/menosvaloradas"
+            element={
+              <PublicRoute isAuthenticated={logged}>
+                <NavBarPublic setSearch={setSearch} />
 
+                <MenosValoradas search={search}/>
+              </PublicRoute>
+            }
+          />
           <Route
             path="/*"
             element={

@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { RegistroAsincrono } from "../../actions/actionRegistro";
+import "./Registro.scss";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export const Registro = () => {
-
-
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [registro, setRegistro] = useState({
     nombre: "",
@@ -27,62 +26,81 @@ export const Registro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(RegistroAsincrono(email, pass1, nombre))
+    dispatch(RegistroAsincrono(email, pass1, nombre));
   };
 
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleShowClick = () => setShowPassword(!showPassword);
+
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicName">
-          <Form.Label>Nombre</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter name"
-            name="nombre"
-            value={nombre}
-            onChange={handleInputChange}
-          />
-        </Form.Group>
+    <div className="ContainerAll">
+      <form onSubmit={handleSubmit}>
+        <div className="ContainerInputs">
+          <div className="Input">
+            <label>Nombre</label>
+            <input
+              className="inputAlone"
+              type="text"
+              placeholder="Enter name"
+              name="nombre"
+              value={nombre}
+              onChange={handleInputChange}
+            />
+          </div>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Correo</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="email"
-            name="email"
-            value={email}
-            onChange={handleInputChange}
-          />
-        </Form.Group>
+          <div className="Input">
+            <label>Correo</label>
+            <input
+              className="inputAlone"
+              type="email"
+              placeholder="email"
+              name="email"
+              value={email}
+              onChange={handleInputChange}
+            />
+          </div>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Contraseña</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            name="pass1"
-            value={pass1}
-            onChange={handleInputChange}
-          />
-        </Form.Group>
+          <div className="Input">
+            <label>Contraseña</label>
+            <input
+              className="inputAlone"
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              name="pass1"
+              value={pass1}
+              onChange={handleInputChange}
+            />
+            <button onClick={handleShowClick} className="mostrarContraseña">
+              {showPassword ? (
+                <AiFillEyeInvisible size={20} />
+              ) : (
+                <AiFillEye size={20} />
+              )}
+            </button>
+          </div>
 
-        <Form.Group className="mb-3" controlId="formBasicRepitPassword">
-          <Form.Label>Repita contraseña</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            name="pass2"
-            value={pass2}
-            onChange={handleInputChange}
-          />
-        </Form.Group>
+          <div className="Input">
+            <label>Repita contraseña</label>
+            <input
+              className="inputAlone"
+              type="password"
+              placeholder="Password"
+              name="pass2"
+              value={pass2}
+              onChange={handleInputChange}
+            />
+          </div>
 
-        <Button variant="primary" type="submit">
-          Registrarse
-        </Button>
+          <button variant="primary" type="submit" className="btn">
+            Registrarse
+          </button>
 
-        <Link to="/login">Login</Link>
-      </Form>
+          <Link to="/login" type="button" className="btn">
+            Login
+          </Link>
+        </div>
+      </form>
     </div>
   );
 };

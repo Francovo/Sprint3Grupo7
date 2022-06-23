@@ -66,17 +66,15 @@ export const editarFavoritoAsincrono = (id, data) => {
     const q = query(pelCollection, where("id", "==", id));
 
     const datos = await getDocs(q);
-    let idForEach
-    datos.forEach(async(documento) => {
-      idForEach = documento.id
-    })
+    let idForEach;
+    datos.forEach(async (documento) => {
+      idForEach = documento.id;
+    });
 
-    const EditarFavorito = doc(db, "Sprint3grupo07", idForEach)
-    await updateDoc(EditarFavorito,data)
-    .then(() => {
-      listarFavoritosAsincrono()
-    }
-    )
+    const EditarFavorito = doc(db, "Sprint3grupo07", idForEach);
+    await updateDoc(EditarFavorito, data).then(() => {
+      listarFavoritosAsincrono();
+    });
   };
 };
 

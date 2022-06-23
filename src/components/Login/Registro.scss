@@ -1,0 +1,45 @@
+.ContainerAll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+
+  .ContainerInputs {
+    padding: 3rem 10rem;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  label {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 208, 0);
+  }
+  .Input {
+    border: solid 1px;
+  }
+
+  .inputAlone {
+    border: none;
+    outline: none;
+  }
+
+  .btn {
+    border: solid 2px;
+    background-color: rgb(250, 142, 0);
+  }
+
+  .google{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: .4rem;
+    border: solid 2px;
+  }
+
+  .mostrarContraseña {
+    background-color: transparent;
+    border: none;
+  }
+}

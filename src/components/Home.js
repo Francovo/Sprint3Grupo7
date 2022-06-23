@@ -24,7 +24,7 @@ const Home = ({ search }) => {
   };
 
   const movies = useSelector((state) => state.movies.movies);
-
+  console.log(movies);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -34,6 +34,7 @@ const Home = ({ search }) => {
       dispatch(addPage(page));
     }
   }, [dispatch, page, search]);
+
 
   return (
     <div>

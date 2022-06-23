@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Form, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
   loginEmailPassAsincrono,
   loginGoogleAsincrono,
 } from "../../actions/actionLogin";
 import { useDispatch } from "react-redux";
+import "./Registro.scss";
 
 function Login() {
   const dispatch = useDispatch();
@@ -34,48 +34,48 @@ function Login() {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Correo</Form.Label>
-        <Form.Control
-          type="email"
-          placeholder="Enter email"
-          name="email"
-          value={email}
-          onChange={handleInputChange}
-        />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Contraseña</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Password"
-          name="password"
-          value={password}
-          onChange={handleInputChange}
-        />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Enviar
-      </Button>
-
-      <Container className="auth__social-networks">
-        <Container
-          className="google-btn"
-          onClick={() => handleGoogleAsincrono()}
-        >
-          <Container className="google-icon-wrapper">
-            <img
-              className="google-icon"
-              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-              alt="google button"
+    <div className="ContainerAll">
+      <form onSubmit={handleSubmit}>
+        <div className="ContainerInputs">
+          <div className="Input">
+            <label>Correo</label>
+            <input
+              type="email"
+              placeholder="Enter email"
+              name="email"
+              value={email}
+              onChange={handleInputChange}
             />
-          </Container>
-        </Container>
-      </Container>
-      <Link to="/registro">Registrarse</Link>
-    </Form>
+          </div>
+
+          <div className="Input">
+            <label>Contraseña</label>
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              minLength={6}
+              value={password}
+              onChange={handleInputChange}
+            />
+          </div>
+          <button variant="primary" type="submit">
+            Enviar
+          </button>
+
+            <div className="google" onClick={() => handleGoogleAsincrono()}>
+              <div className="google-icon-wrapper">
+                <img
+                  className="google-icon"
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                  alt="google button"
+                />
+              </div>
+            </div>
+          <Link to="/registro" className="btn">Registrarse</Link>
+        </div>
+      </form>
+    </div>
   );
 }
 

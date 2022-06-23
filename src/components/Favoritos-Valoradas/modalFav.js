@@ -36,19 +36,6 @@ export const ModalFav = (modal) => {
 
         <Modal.Body>
           <form onSubmit={formik.handleSubmit}>
-            {/* <input
-              id="inputImagen"
-              type="file"
-              className="form-control"
-              placeholder="Seleccionar Imagen"
-              name="imagen"
-              value={formik.values.imagen}
-              onChange={formik.handleChange}
-              required
-            />
-            <button type="button" className="btn btn-dark">
-              Seleccionar Imagen
-            </button> */}
 
             <input
               id="inputNombre"

@@ -1,0 +1,76 @@
+.ContainerNavBar {
+  margin-bottom: 2rem;
+  .Container1 {
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 500;
+  }
+  .Logo {
+    width: 9rem;
+  }
+
+  .btnNavBar {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    border: solid 1px;
+    padding: 0.2rem 1rem;
+    border-radius: 10px;
+    background-color: rgb(255, 208, 0);
+  }
+}
+
+.container-Input {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  height: 42px;
+  .Input {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+  }
+  .btn-icono {
+    border-radius: 0 5px 5px 0;
+    background-color: rgb(255, 208, 0);
+    border: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.btnUbicacion {
+  background: none;
+  display: flex;
+  border: none;
+  align-items: center;
+  .Ubicacion {
+    display: flex;
+    justify-content: space-around;
+    width: 7rem;
+    color: white;
+  }
+}
+
+.iconUbi {
+  margin: 0.5rem 0.5rem 0 0;
+}
+
+.aFav {
+  height: fit-content;
+  text-decoration: none;
+  .estrella {
+    color: yellow;
+  }
+}
+
+.btnlogout {
+  border-radius: 10px;
+  height: 2.2rem;
+  background: orange;
+}
